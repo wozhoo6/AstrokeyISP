@@ -1,0 +1,174 @@
+/* home.css */
+
+/* General container */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    margin: 0;
+    padding: 0;
+    color: #1e293b;
+}
+
+.p-4 {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Title */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+/* Subtitle text */
+p.mb-2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+/* Separator input */
+input[type="text"] {
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+input[type="text"]:hover {
+    border-color: #94a3b8;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* File input styled like a button */
+input[type="file"] {
+    appearance: none;
+    border: 2px dashed #94a3b8;
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: #f8fafc;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+input[type="file"]:hover {
+    border-color: #3b82f6;
+    background-color: #f1f5f9;
+}
+
+/* File list container */
+.mb-4.p-3 {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mb-4.p-3 h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+/* File list items as tags/badges */
+ul.list-disc {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+ul.list-disc li {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+}
+
+/* Buttons */
+button {
+    margin: 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Process button */
+button.bg-green-500 {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.25);
+}
+
+button.bg-green-500:hover:enabled {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+/* Clear button */
+button.bg-red-500 {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 4px 6px rgba(220, 38, 38, 0.25);
+}
+
+button.bg-red-500:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+/* ---- Main client/entries container ---- */
+.mt-6 {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Remove per-client block style */
+.mb-6 {
+    margin-bottom: 1.25rem;
+}
+
+/* Entries should look like plain text, not blocks */
+pre {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    /* preserve formatting */
+    font-family: monospace;
+}
