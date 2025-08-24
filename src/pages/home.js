@@ -69,33 +69,33 @@ export default function Home() {
 
             {data && data.length > 0 && (
                 <div className="mt-6" >
-                    {data.map((clientData, i) => (
-                        <div key={i} className="mb-6">
-                            {/* Client Name */}
-                            <h2 className="font-bold text-xl mb-4">{clientData.client}</h2>
+                    {data.map((clientData, i) => {
+                        const isLastClient = i === data.length - 1;
 
-                            {/* Entries */}
-                            {clientData.entries.map((entry, j) => {
-                                const isLastClient = i === data.length - 1;
+                        // Build one big string for all entries of this client
+                        const allEntries = clientData.entries
+                            .map((entry, j) => {
                                 const isLastEntry = j === clientData.entries.length - 1;
                                 const isFirstEntry = j === 0;
 
                                 return (
-                                    <div key={j}>
-                                        <pre className="whitespace-pre-wrap mb-4">
-                                            {isFirstEntry ? "\n" : ""}
-                                            {entry.join("\n")}
-                                            {!isLastEntry
-                                                ? "\n" + repeatedSeparator + "\n\n"
-                                                : !isLastClient
-                                                    ? "\n" + repeatedSeparator + repeatedSeparator + "\n\n"
-                                                    : ""}
-                                        </pre>
-                                    </div>
+                                    (!isFirstEntry  ? "\n" + repeatedSeparator + "\n\n" : "") +
+                                    entry.join("\n")
                                 );
-                            })}
-                        </div>
-                    ))}
+                            })
+                            .join(""); // ✅ combine all entries into one string
+
+                        return (
+                            <div key={i} className="mb-6">
+                                {/* Client Name */}
+                                <h2 className="font-bold text-xl mb-4">{clientData.client}</h2>
+
+                                {/* All entries inside one pre */}
+                                <pre className="whitespace-pre-wrap mb-4">{allEntries}</pre>
+                            </div>
+                        );
+                    })}
+
                 </div>
             )}
 

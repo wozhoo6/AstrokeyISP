@@ -61,7 +61,7 @@ export default function useHandleFileChanges() {
 
     const filterLines = (fileLines) => {
 
-        const exclude = ["Staff:", "Client:", "Date of Call:", "Call Type:", "Outage Type:",]
+        const exclude = ["Staff:", "Client:", "Date of Call:",]
 
         const resolvedLine = fileLines.find(line => line.includes("Resolved:"));
         const callTypeLine = fileLines.find(line => line.includes("Call Type:"));
@@ -71,8 +71,11 @@ export default function useHandleFileChanges() {
 
         console.log("isOutageCall:", isOutageCall);
 
-        if (isResolved || isOutageCall) {
-            exclude.push("Next Step:", "Assigned To:");
+        if (!isOutageCall) {
+            exclude.push("Outage Type:", "Call Type:", "Assigned To:");
+        }
+        if (isResolved) {
+            exclude.push("Next Step:", "Assigned To:", "Outage Type:", "Call Type:");
         }
 
 

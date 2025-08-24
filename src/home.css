@@ -39,6 +39,9 @@ input[type="text"] {
     font-size: 1rem;
     transition: all 0.2s ease-in-out;
     margin-bottom: 1rem;
+    width: 5rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 input[type="text"]:hover {
@@ -76,6 +79,7 @@ input[type="file"]:hover {
     border-radius: 12px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
 }
 
 .mb-4.p-3 h2 {
@@ -106,7 +110,7 @@ ul.list-disc li {
 
 /* Buttons */
 button {
-    margin: 1rem;
+    margin: 1rem 0.5rem 1rem 0;
     border: none;
     cursor: pointer;
     font-weight: 600;
@@ -129,7 +133,7 @@ button.bg-green-500 {
 }
 
 button.bg-green-500:hover:enabled {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.05);
     background: linear-gradient(135deg, #16a34a, #15803d);
 }
 
@@ -141,7 +145,7 @@ button.bg-red-500 {
 }
 
 button.bg-red-500:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.05);
     background: linear-gradient(135deg, #dc2626, #b91c1c);
 }
 
@@ -155,20 +159,30 @@ button.bg-red-500:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Remove per-client block style */
+/* Per-client block spacing only */
 .mb-6 {
     margin-bottom: 1.25rem;
 }
 
-/* Entries should look like plain text, not blocks */
+/* Client title */
+.mb-6 h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+/* Entries */
 pre {
-    background: transparent;
-    border: none;
-    padding: 0;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
     margin: 0 0 1rem 0;
     font-size: 0.95rem;
     line-height: 1.5;
     white-space: pre-wrap;
-    /* preserve formatting */
     font-family: monospace;
+    overflow-x: auto;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
